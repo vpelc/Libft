@@ -6,61 +6,61 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:01:01 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/09 20:51:28 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/10 14:53:31 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	make_pos(int n)
-{
-	unsigned int	nbr;
-
-	if (n != -2147483648)
-		n = -n;
-	nbr = n;
-	return (nbr);
-}
-
-
-size_t	ft_strnbr(int n)
+size_t	ft_strnbr(long n)
 {
 	size_t	i;
 
 	i = 0;
-	if (n >= 10)
+	if (n < 0)
 	{
-		ft_strnbr(n / 10);
+		i++;
+		n = -n;
+	}
+	while (n >= 10)
+	{
+		n /= 10;
 		i++;
 	}
 	i++;
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_putstr(long n, char *str, size_t size)
 {
-	char	*str;
-	size_t	i;
-	unsigned int	nbr;
-
-	nbr = n;
-	str = malloc(sizeof(char) * (ft_strnbr(make_pos(n))));
-	i = 0;
+	str[size] = '\0';
+	size--;
 	if (n < 0)
 	{
 		str[0] = '-';
-		nbr = make_pos(n);
+		n = -n;
 	}
-	if (n >= 10)
+	while (n >= 10)
 	{
-		ft_itoa(n / 10);
-		str[i] = (n % 10 + 48);
-		i++;
+		str[size] = (n % 10) + 48;
+		n /= 10;
+		size--;
 	}
-	if (n < 10 && n)
-	{
-		str[i] = (n % 10 + 48);
-		i++;
-	}
+	str[size] = (n % 10) + 48;
+	return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	long	nbr;
+	size_t	size;
+
+	nbr = n;
+	size = ft_strnbr(nbr);
+	str = malloc(sizeof(char) * (size + 1));
+	if (str == 0)
+		return (0);
+	ft_putstr(nbr, str, size);
 	return (str);
 }
