@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 11:09:54 by vpelc             #+#    #+#              #
-#    Updated: 2024/04/08 11:30:09 by vpelc            ###   ########.fr        #
+#    Updated: 2024/04/15 19:15:56 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,17 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-SOURCES = $(wildcard *.c) 
+SOURCE = ft_memset ft_bzero ft_memcpy ft_memmove ft_memchr ft_memcmp ft_strlen ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint ft_toupper ft_tolower ft_strchr ft_strrchr ft_strncmp ft_striteri ft_strlcpy ft_strlcat ft_strnstr ft_atoi ft_calloc ft_strdup ft_substr ft_strjoin ft_strtrim ft_split ft_itoa ft_strmapi ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd
+
+SOURCES_BONUS = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
+
+SOURCES = $(addsuffix .c, ${SOURCE})
+
+SOURCES_BONUS = $(addsuffix _bonus.c, ${B_SRC})
 
 OBJECTS = ${SOURCES:.c=.o}
+
+OBJECTS_BONUS = ${SOURCES_BONUS:.c=.o}
 
 .c.o:
 		${CC} ${CFLAGS} -I libft.h -c $< -o ${<:.c=.o}
@@ -40,4 +48,7 @@ fclean:		clean
 
 re:		fclean all
 
-.PHONY: all clean re
+bonus: 		${OBJECTS_BONUS} ${OBJECTS}
+		${AR} ${NAME} ${OBJECTS_BONUS} ${OBJECTS}
+		
+.PHONY: all clean re bonus 

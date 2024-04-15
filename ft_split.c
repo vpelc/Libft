@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:13:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/15 14:21:52 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/15 19:05:44 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putstr(char *split, char const *str, char c)
 	size_t	i;
 
 	i = 0;
-	while (str[i] != c)
+	while (str[i] != c && str[i])
 	{
 		split[i] = str[i];
 		i++;
@@ -56,7 +56,7 @@ void	ft_put_in_split(char **split, char const *str, char c)
 		else
 		{
 			j = 0;
-			while (str[i + j] != c)
+			while (str[i + j] != c && str[i + j])
 				j++;
 			split[k] = malloc(sizeof(char) * j + 1);
 			ft_putstr(split[k], str + i, c);
