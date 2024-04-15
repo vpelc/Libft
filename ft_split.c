@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:13:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/09 17:59:07 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/15 14:21:52 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_nbrstr(char const *str, char c)
 	j = 0;
 	while (str[i])
 	{
-		if (str[i + 1] == c && str[i] != c)
+		if ((str[i + 1] == c || str[i + 1] == '\0') && str[i] != c)
 			j++;
 		i++;
 	}

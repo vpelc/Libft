@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:48:57 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/09 13:11:00 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/15 14:02:33 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 
 	len = ft_strlen(s1);
-	cpy = malloc(sizeof(char) * len);
+	cpy = malloc(sizeof(char) * (len + 1));
 	if (cpy == 0)
 		return (0);
-	ft_strlcpy(cpy, s1, len);
+	ft_strlcpy(cpy, s1, len + 1);
 	i = len - 1;
 	while (ft_check_set(s1[i], set) == 1)
 	{
@@ -46,6 +46,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (ft_check_set(s1[i], set) == 1)
 		i++;
-	ft_memmove(cpy, cpy + i, (len - i));
+	ft_memmove(cpy, cpy + i, (len + 1 - i));
 	return (cpy);
 }
