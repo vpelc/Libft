@@ -6,13 +6,13 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 17:14:32 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/11 11:46:36 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 18:23:34 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(const char *str)
+static	int	ft_isspace(const char *str)
 {
 	int	i;
 

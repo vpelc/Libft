@@ -6,13 +6,13 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 12:55:17 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/08 17:46:29 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 18:24:50 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strj(char const *s1, char const *s2, char *join, size_t len)
+static	char	*ft_strj(char const *s1, char const *s2, char *join, size_t len)
 {
 	size_t	i;
 	size_t	j;

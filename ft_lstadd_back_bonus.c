@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:43:20 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/15 19:57:53 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 15:43:37 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !new)
-		return ;
 	if (*lst)
-		ft_lstlast(*lst)->next = *lst;
+		ft_lstlast(*lst)->next = new;
 	else
 		*lst = new;
 }

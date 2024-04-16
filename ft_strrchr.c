@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 16:40:48 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/11 11:06:25 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 16:03:07 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	str = (char *)s;
 	n = ft_strlen(str);
-	if (c > 255)
+	while (c > 255)
 		c -= 256;
 	while (n > 0 && str[n] != c)
 		n--;

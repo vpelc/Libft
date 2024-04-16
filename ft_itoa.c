@@ -6,13 +6,13 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:01:01 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/10 14:53:31 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 18:24:16 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strnbr(long n)
+static	size_t	ft_strnbr(long n)
 {
 	size_t	i;
 
@@ -31,7 +31,7 @@ size_t	ft_strnbr(long n)
 	return (i);
 }
 
-char	*ft_putstr(long n, char *str, size_t size)
+static	char	*ft_putstr(long n, char *str, size_t size)
 {
 	str[size] = '\0';
 	size--;

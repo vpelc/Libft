@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:34:34 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/15 19:38:22 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 15:42:54 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	while (lst[i].next != 0)
-		i++;
-	return (lst + i);
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
 }

@@ -6,13 +6,13 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:48:57 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/15 14:02:33 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 18:25:13 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check_set(char c, char const *set)
+static	int	ft_check_set(char c, char const *set)
 {
 	size_t	i;
 

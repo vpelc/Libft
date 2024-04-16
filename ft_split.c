@@ -6,13 +6,13 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:13:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/15 19:05:44 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 18:43:50 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nbrstr(char const *str, char c)
+static	int	ft_nbrstr(char const *str, char c)
 {
 	int	i;
 	int	j;
@@ -28,7 +28,7 @@ int	ft_nbrstr(char const *str, char c)
 	return (j);
 }
 
-void	ft_putstr(char *split, char const *str, char c)
+static	void	ft_putstr(char *split, char const *str, char c)
 {
 	size_t	i;
 
@@ -73,6 +73,8 @@ char	**ft_split(char const *str, char c)
 
 	size = ft_nbrstr(str, c);
 	split = malloc((size + 1) * sizeof(char *));
+	if (!split)
+		return (0);
 	ft_put_in_split(split, str, c);
 	split[size] = 0;
 	return (split);

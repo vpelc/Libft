@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 12:12:17 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/08 13:35:08 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 18:43:21 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen((char *)s);
 	dup = malloc(sizeof(char) * (len + 1));
+	if (!dup)
+		return (0);
 	i = 0;
 	while (i < len)
 	{

@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 15:14:18 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/09 20:03:48 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 18:50:00 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-	char	*d;
-	char	*s;
 
-	d = (char *)dst;
-	s = (char *)src;
+	if (!dst || !src)
+		return (0);
 	i = 0;
 	if (src > dst)
 	{
 		while (i < n)
 		{
-			d[i] = s[i];
+			*(char *)(dst + i) = *(char *)(src + i);
 			i++;
 		}
 	}
@@ -33,7 +31,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	{
 		while (n > 0)
 		{
-			d[n - 1] = s[n - 1];
+			*(char *)(dst + (n - 1)) = *(char *)(src + (n - 1));
 			n--;
 		}
 	}

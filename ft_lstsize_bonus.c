@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:26:52 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/15 19:46:34 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 15:02:34 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ int	ft_lstsize(t_list *lst)
 
 	if (!lst)
 		return (0);
-	i = 1;
-	while (lst[i].next != 0)
+	i = 0;
+	while (lst)
+	{
 		i++;
+		lst = lst->next;
+	}
 	return (i);
 }

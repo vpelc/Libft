@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 11:38:32 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/10 18:19:50 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/16 18:50:38 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (nmemb == 0 || size == 0)
 		return (0);
 	calloc = malloc(size * nmemb);
-	ft_bzero(calloc, nmemb);
+	if (!calloc)
+		return (0);
+	ft_bzero(calloc, (nmemb * size));
 	return (calloc);
 }
