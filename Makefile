@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 11:09:54 by vpelc             #+#    #+#              #
-#    Updated: 2024/04/16 18:01:11 by vpelc            ###   ########.fr        #
+#    Updated: 2024/04/17 17:37:37 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ ${NAME}:	${OBJECTS}
 all:	${NAME}
 
 clean:
-		${RM} ${OBJECTS}
+		${RM} ${OBJECTS} ${OBJECTS_BONUS}
 
 fclean:		clean
 		${RM} ${NAME}

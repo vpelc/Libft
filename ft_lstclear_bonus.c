@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:18:46 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/16 15:51:58 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/17 18:18:32 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	if (!lst || !*lst)
+		return ;
 	if ((*lst)->next)
 		ft_lstclear((&(*lst)->next), del);
 	del((*lst)->content);
