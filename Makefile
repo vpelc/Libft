@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
+#    By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 11:09:54 by vpelc             #+#    #+#              #
-#    Updated: 2024/04/17 17:37:37 by vpelc            ###   ########.fr        #
+#    Updated: 2024/04/19 16:39:48 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ fclean:		clean
 
 re:		fclean all
 
-bonus: 		${OBJECTS_BONUS} ${OBJECTS}
-		${AR} ${NAME} ${OBJECTS_BONUS} ${OBJECTS}
+bonus: 		${OBJECTS_BONUS}
+		${AR} ${NAME} ${OBJECTS_BONUS}
 		
 .PHONY: all clean re bonus 
