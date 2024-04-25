@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:48:57 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/23 13:52:02 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/25 15:22:32 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	k;
 
 	if (!s1 || !set)
-		return (NULL);
+		return (0);
 	i = 0;
 	while (s1[i] && ft_check_set(s1[i], set))
 		i++;
@@ -43,7 +43,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j--;
 	cpy = malloc(sizeof(char) * ((j - i) + 1));
 	if (!cpy)
-		return (NULL);
+		return (0);
 	k = 0;
 	while (i + k < j)
 	{

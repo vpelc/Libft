@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
+/*   By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 16:11:17 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/10 19:39:13 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/25 21:13:26 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	size_t	size_d;
 	size_t	i;
 
+	if (!dest && n == 0)
+		return (ft_strlen(src));
 	size_d = ft_strlen(dest);
 	i = 0;
 	if (n <= size_d)

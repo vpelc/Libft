@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:13:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/19 16:39:07 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/25 15:25:19 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ char	**ft_split(char const *str, char c)
 	size_t	size;
 	int		k;
 
+	if (!str)
+		return (0);
 	size = ft_nbrstr(str, c);
 	split = malloc((size + 1) * sizeof(char *));
 	if (!split)
