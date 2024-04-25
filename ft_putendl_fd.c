@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:42:28 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/19 15:36:07 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/23 14:39:45 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	while (s[i])
 	{
-		write(fd, &s[i], sizeof(char));
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
 	write(fd, "\n", 1);

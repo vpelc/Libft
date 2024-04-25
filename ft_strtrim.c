@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
+/*   By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:48:57 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/17 18:07:48 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/23 13:52:02 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,69 +26,30 @@ static	int	ft_check_set(char c, char const *set)
 	return (0);
 }
 
-static	int	ft_onlyset(char const *s1, char const *set)
-{
-	size_t	i;
-	size_t	j;
-
-	i = ft_strlen(s1) - 1;
-	j = 0;
-	while (ft_check_set(s1[i], set) && i > 0)
-		i--;
-	if (i == 0)
-		return (1);
-	return (0);
-}
-
-static	int	ft_setlen_end(char const *s1, char const *set)
-{
-	size_t	i;
-	size_t	j;
-
-	i = ft_strlen(s1) - 1;
-	j = 0;
-	while (ft_check_set(s1[i], set) && s1[i])
-	{
-		i--;
-		j++;
-	}
-	return (j);
-}
-
-static	int	ft_setlen_start(char const *s1, char const *set)
-{
-	size_t	i;
-
-	i = 0;
-	while (ft_check_set(s1[i], set) && s1[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*cpy;
-	size_t	len;
 	size_t	i;
 	size_t	j;
+	size_t	k;
 
-	if (ft_onlyset(s1, set))
-	{
-		cpy = calloc(1, 1);
-		return (cpy);
-	}
-	len = ft_strlen(s1) - ft_setlen_end(s1, set) - ft_setlen_start(s1, set);
-	cpy = malloc(sizeof(char) * (len + 1));
-	if (cpy == 0)
-		return (0);
-	i = ft_setlen_start(s1, set);
-	j = 0;
-	while ((ft_strlen(s1) - ft_setlen_end(s1, set)) > i)
-	{
-		cpy[j] = s1[i];
-		j++;
+	if (!s1 || !set)
+		return (NULL);
+	i = 0;
+	while (s1[i] && ft_check_set(s1[i], set))
 		i++;
+	j = ft_strlen(s1);
+	while (j > i && ft_check_set(s1[j - 1], set))
+		j--;
+	cpy = malloc(sizeof(char) * ((j - i) + 1));
+	if (!cpy)
+		return (NULL);
+	k = 0;
+	while (i + k < j)
+	{
+		cpy[k] = s1[i + k];
+		k++;
 	}
-	cpy[j] = '\0';
+	cpy[k] = '\0';
 	return (cpy);
 }

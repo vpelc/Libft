@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
+/*   By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 16:47:29 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/11 11:43:46 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/23 13:53:57 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	c1 = c;
 	str = (unsigned char *)s;
-	if (c1 > 255)
-		c1 -= 256;
 	while (i < (n - 1) && str[i] != c1)
 		i++;
 	if (str[i] != c1)

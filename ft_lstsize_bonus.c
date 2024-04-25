@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
+/*   By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:26:52 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/16 15:02:34 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/23 13:53:34 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	ft_lstsize(t_list *lst)
 {
 	size_t	i;
 
-	if (!lst)
-		return (0);
 	i = 0;
 	while (lst)
 	{

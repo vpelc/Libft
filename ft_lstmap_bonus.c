@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:36:00 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/19 15:45:32 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/23 12:44:02 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*elem;
 	void	*set;
 
+	if (!f || !del)
+		return (0);
 	dup = 0;
 	while (lst)
 	{
