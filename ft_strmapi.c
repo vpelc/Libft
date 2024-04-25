@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:52:25 by vpelc             #+#    #+#             */
-/*   Updated: 2024/04/25 15:35:18 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/04/25 21:18:49 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*str;
 
-	if (!s)
+	if (!s || !f)
 		return (0);
 	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str == 0)
