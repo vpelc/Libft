@@ -3,14 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vpelc <vpelc@student.42.fr>                +#+  +:+       +#+         #
+#    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 11:09:54 by vpelc             #+#    #+#              #
-#    Updated: 2024/04/25 13:10:53 by vpelc            ###   ########.fr        #
+#    Updated: 2024/04/26 16:59:00 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+#NB = test.a
 
 CC = gcc
 
@@ -50,5 +52,10 @@ re:		fclean all
 
 bonus: 		${OBJECTS_BONUS}
 		${AR} ${NAME} ${OBJECTS_BONUS}
+
+#bonus: 	${NB}
+
+#${NB}: ${OBJECTS_BONUS}
+#		${AR} ${NB} ${OBJECTS_BONUS}
 		
 .PHONY: all clean fclean re bonus 
