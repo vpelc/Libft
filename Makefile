@@ -6,17 +6,15 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 11:09:54 by vpelc             #+#    #+#              #
-#    Updated: 2024/04/26 16:59:00 by vpelc            ###   ########.fr        #
+#    Updated: 2024/05/06 10:38:43 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-#NB = test.a
+CC = cc
 
-CC = gcc
-
-AR = ar rc
+AR = ar rcs
 
 RM = rm -f
 
@@ -35,7 +33,7 @@ OBJECTS = ${SOURCES:.c=.o}
 OBJECTS_BONUS = ${SOURCES_BONUS:.c=.o}
 
 .c.o:
-		${CC} ${CFLAGS} -I libft.h -c $< -o ${<:.c=.o}
+		${CC} ${CFLAGS}  -c $< -o ${<:.c=.o} -I ./
 
 ${NAME}:	${OBJECTS}
 		${AR} ${NAME} ${OBJECTS}
@@ -52,10 +50,5 @@ re:		fclean all
 
 bonus: 		${OBJECTS_BONUS}
 		${AR} ${NAME} ${OBJECTS_BONUS}
-
-#bonus: 	${NB}
-
-#${NB}: ${OBJECTS_BONUS}
-#		${AR} ${NB} ${OBJECTS_BONUS}
 		
 .PHONY: all clean fclean re bonus 
